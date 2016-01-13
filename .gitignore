@@ -1,0 +1,4 @@
+monitoring*
+
+*.log
+*.pid
