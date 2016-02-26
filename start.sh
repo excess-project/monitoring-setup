@@ -28,7 +28,7 @@ echo "> monitoring server"
 cd ${SERVER_DIR}
 ./start.sh
 
-sleep 3
+sleep 2
 
 echo "> monitoring agent"
 cd ${AGENT_DIR}/dist
