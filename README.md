@@ -57,6 +57,7 @@ Please [create](https://github.com/excess-project/monitoring-setup/website/issue
 
 | Date        | Version | Comment          |
 | ----------- | ------- | ---------------- |
+| 2016-02-26  | 16.2    | Release of the final prototype |
 | 2016-01-13  | 1.0     | Public release.  |
 
 
