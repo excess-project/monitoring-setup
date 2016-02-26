@@ -19,18 +19,25 @@
 #
 BASE_DIR=`pwd`
 INSTALL_DIR=${BASE_DIR}/monitoring
-SERVER_DIR=${INSTALL_DIR}/monitoring-server
-AGENT_DIR=${INSTALL_DIR}/monitoring-agent
+SERVER_DIR=${INSTALL_DIR}/monitoring-framework-server
+WWW_DIR=${INSTALL_DIR}/monitoring-framework-frontend
+AGENT_DIR=${INSTALL_DIR}/monitoring-framework-client
 
 echo "Starting components ..."
-echo "> server"
+echo "> monitoring server"
 cd ${SERVER_DIR}
 ./start.sh
 
 sleep 3
 
-echo "> agent"
-cd ${AGENT_DIR}
+echo "> monitoring agent"
+cd ${AGENT_DIR}/dist
+./start.sh
+
+sleep 3
+
+echo "> monitoring frontend"
+cd ${WWW_DIR}
 ./start.sh
 
 echo "Done"

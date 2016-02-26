@@ -41,14 +41,37 @@ mkdir ${INSTALL_DIR}
 echo "Downloading and installing components ..."
 echo "> monitoring server"
 cd ${INSTALL_DIR}
-git clone https://github.com/excess-project/monitoring-server
-cd monitoring-server
+#git clone https://github.com/excess-project/monitoring-server
+git clone http://gitlab.excess-project.eu/hlrs/monitoring-framework-server.git
+cd monitoring-framework-server
+git checkout release/16.2.0
+./setup.sh
+
+echo "> monitoring frontend"
+cd ${INSTALL_DIR}
+#git clone https://github.com/excess-project/monitoring-server
+git clone http://gitlab.excess-project.eu/hlrs/monitoring-framework-frontend.git
+cd monitoring-framework-frontend
+git checkout release/16.2.0
 ./setup.sh
 
 echo "> monitoring agent"
 cd ${INSTALL_DIR}
-git clone https://github.com/excess-project/monitoring-agent
-cd monitoring-agent
+#git clone https://github.com/excess-project/monitoring-agent
+git clone http://gitlab.excess-project.eu/hlrs/monitoring-framework-client.git
+cd monitoring-framework-client
+git checkout release/16.2.0
 ./setup.sh
+
 echo "Done"
+echo
+
+echo "Compiling sources ..."
+echo "> monitoring agent"
+make
+make install
+echo "Done"
+echo
+
+echo "The monitoring framework can now be started/stopped by executing start.sh or stop.sh, respectively."
 echo
