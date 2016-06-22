@@ -43,21 +43,21 @@ echo "> monitoring server"
 cd ${INSTALL_DIR}
 git clone https://github.com/excess-project/monitoring-server
 cd monitoring-server
-git checkout 16.2.0
+git checkout 16.6.0
 ./setup.sh
 
 echo "> monitoring frontend"
 cd ${INSTALL_DIR}
 git clone https://github.com/excess-project/monitoring-frontend
 cd monitoring-frontend
-git checkout 16.2.0
+git checkout 16.6.0
 ./setup.sh
 
 echo "> monitoring agent"
 cd ${INSTALL_DIR}
 git clone https://github.com/excess-project/monitoring-agent
 cd monitoring-agent
-git checkout 16.2.0
+git checkout 16.6.0
 ./setup.sh
 
 echo "Done"
